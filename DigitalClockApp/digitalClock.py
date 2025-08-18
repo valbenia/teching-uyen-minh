@@ -306,6 +306,7 @@ class DigitalClock:
             pady=10,
             state="disabled"
         )
+    
         self.timer_pause_btn.pack(side="left", padx=10)
         
         self.timer_stop_btn = tk.Button(
@@ -338,11 +339,12 @@ class DigitalClock:
         
         quick_times = [
             ("1 min", 0, 1, 0),
-            ("5 min", 0, 5, 0),
-            ("10 min", 0, 10, 0),
-            ("15 min", 0, 15, 0),
-            ("30 min", 0, 30, 0),
-            ("1 hour", 1, 0, 0)
+            ("5 mins", 0, 5, 0),
+            # ("10 mins", 0, 10, 0),
+            ("15 mins", 0, 15, 0),
+            # ("30 mins", 0, 30, 0),
+            ("1 hour", 1, 0, 0),
+            ("2 hours", 2, 0, 0)
         ]
         
         for text, h, m, s in quick_times:
@@ -1076,10 +1078,14 @@ Features:
         self.root.destroy()
 
 def main():
+    
+    
     """Main function to run the application"""
+    
     root = tk.Tk()
     app = DigitalClock(root)
     
+
     # Center window on screen
     root.update_idletasks()
     width = root.winfo_width()
